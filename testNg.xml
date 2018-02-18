@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="framework execution">
+	<test name="regression execution">
+		<classes>
+			<class name="com.crm.qa.tests.LoginPageTest"></class>
+			<class name="com.crm.qa.tests.HomePageTest"></class>
+			<class name="com.crm.qa.tests.ContactsPageTest"></class>
+		</classes>
+	</test>
+
+</suite>

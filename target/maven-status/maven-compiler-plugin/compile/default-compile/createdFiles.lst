@@ -1,0 +1,8 @@
+com\crm\qa\pages\ContactsPage.class
+com\crm\qa\utility\Xls_Reader.class
+com\crm\qa\base\TestBase.class
+com\crm\qa\pages\HomePage.class
+com\crm\qa\pages\LoginPage.class
+com\crm\qa\testData\HalfEbay.class
+com\crm\qa\utility\WebEvenListner.class
+com\crm\qa\utility\TestUtil.class
