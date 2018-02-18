@@ -22,13 +22,13 @@ public class LoginPageTest extends TestBase {
 	 loginpage = new LoginPage();
 	}
 	
-	@Test
+	@Test(priority=1)
 	public void TitleTest() {
 		String title = loginpage.validateLoginpageTitle();
 		Assert.assertEquals(title,"#1 Free CRM for Any Business: Online Customer Relationship Software" );
 	}
 	
-	@Test
+	@Test(priority=2)
 	public void login() {
 		homePage=loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}

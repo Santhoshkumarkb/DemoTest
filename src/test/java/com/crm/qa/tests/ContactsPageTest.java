@@ -40,7 +40,7 @@ TestUtil testUtil;
 	ArrayList<Object[]> data=TestUtil.getTestdata();
 			return data.iterator();
 	}
-	@Test(dataProvider="getTestData")
+	@Test(dataProvider="getTestData",priority=5)
 	public void createNewContactTest(String title, String ftName, String ltName, String email,String pass) throws InterruptedException {
 		homePage.ClickOnNewContact();
 		Thread.sleep(2000);

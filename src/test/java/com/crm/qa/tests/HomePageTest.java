@@ -30,13 +30,13 @@ ContactsPage contactsPage;
 		homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
 	}
 	
-	@Test(priority=1)
+	@Test(priority=3)
 	public void verifyHomePageTitleTest() {
 	String title=	homePage.verifyHomePageTitle();
 	Assert.assertEquals(title, "CRMPRO","homePage title is not matchng");
 	}
 	
-	@Test(priority=2)
+	@Test(priority=4)
 	public void clickOnContacts() throws InterruptedException {
 		homePage.switchFrame();
 		

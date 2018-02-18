@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -16,17 +17,20 @@ import com.crm.qa.utility.WebEvenListner;
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
-	
+
 	public static EventFiringWebDriver e_Driver;
 	public static WebEvenListner evenListner;
+	static Logger log = Logger.getLogger(TestBase.class);
 
 	public TestBase() {
 		prop = new Properties();
+		log.info("initializing property file");
 		FileInputStream file;
 		try {
 			file = new FileInputStream(
 					"C:\\Users\\santhu\\BDDSelenium\\FreeCRMTest\\src\\main\\java\\com\\crm\\qa\\config\\config.properties");
 			prop.load(file);
+			log.info(" property file is loaded");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,11 +50,12 @@ public class TestBase {
 			System.setProperty("webdriver.gecko.driver", "F:\\softwares\\geckodriver-v0.17.0-win64\\geckodriver.exe");
 			driver = new ChromeDriver();
 		}
-		
-		e_Driver=new EventFiringWebDriver(driver);
-		evenListner=new WebEvenListner();
+
+		e_Driver = new EventFiringWebDriver(driver);
+		evenListner = new WebEvenListner();
 		e_Driver.register(evenListner);
-		driver=e_Driver;
+		log.info("ebent listner is started in testBase ");
+		driver = e_Driver;
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.page_load_timeout, TimeUnit.SECONDS);
